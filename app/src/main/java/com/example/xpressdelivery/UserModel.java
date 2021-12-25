@@ -2,17 +2,25 @@ package com.example.xpressdelivery;
 
 public class UserModel {
 
+    String uid;
     String name;
     String email;
     String mobile;
 
-
-    public UserModel(String name, String email, String mobile) {
+    public UserModel(String uid, String name, String email, String mobile) {
+        this.uid = uid;
         this.name = name;
         this.email = email;
         this.mobile = mobile;
     }
 
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
 
     public String getName() {
         return name;

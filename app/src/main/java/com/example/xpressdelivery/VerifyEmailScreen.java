@@ -33,8 +33,6 @@ public class VerifyEmailScreen extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
 
-        verify_email_tv.setText(user.getEmail().toString());
-
 
 
         verified_btn.setOnClickListener(v->{

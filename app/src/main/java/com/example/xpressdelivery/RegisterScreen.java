@@ -53,8 +53,6 @@ public class RegisterScreen extends AppCompatActivity {
             String c_pass = register_c_pass.getText().toString();
             String mobile = register_mobile.getText().toString();
 
-            UserModel userModel = new UserModel(name,email,mobile);
-
 
             mAuth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
@@ -65,8 +63,14 @@ public class RegisterScreen extends AppCompatActivity {
 
                             FirebaseUser user = mAuth.getCurrentUser();
 
+                            UserModel userModel = new UserModel(user.getUid(),name,email,mobile);
 
-                            //ApiFuture<WriteResult> future = db.collection("cities").document("LA").set(docData);
+                            db = FirebaseFirestore.getInstance();
+
+
+                            db.collection("users")
+                                    .document(user.getUid())
+                                    .set(userModel);
 
                         }
                         else{

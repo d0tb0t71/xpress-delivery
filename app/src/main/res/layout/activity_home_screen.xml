@@ -1,24 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/yellow"
+
     tools:context=".HomeScreen">
 
-    <Button
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/nav_bottom" />
 
-        android:id="@+id/logout"
+
+    <androidx.cardview.widget.CardView
+
+        android:id="@+id/nav_bottom"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Log Out"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/black"
+        app:cardCornerRadius="20dp"
+        android:padding="10dp"
+        android:layout_marginBottom="5dp"
+        >
 
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                >
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/home"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    app:tint="@color/yellow" />
+                
+                <ImageView
+                    android:id="@+id/nav_1"
+                    android:layout_width="5dp"
+                    android:layout_height="5dp"
+                    android:src="@drawable/record"
+                    app:tint="@color/yellow" />
+
+                
+            </LinearLayout>
 
 
-    </Button>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                >
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/delivery"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    app:tint="@color/yellow" />
+
+                <ImageView
+                    android:id="@+id/nav_2"
+                    android:layout_width="5dp"
+                    android:layout_height="5dp"
+                    android:src="@drawable/record"
+                    app:tint="@color/yellow" />
+
+
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                >
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/chat"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    app:tint="@color/yellow" />
+
+                <ImageView
+                    android:id="@+id/nav_3"
+                    android:layout_width="5dp"
+                    android:layout_height="5dp"
+                    android:src="@drawable/record"
+                    app:tint="@color/yellow" />
+
+
+            </LinearLayout>
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                >
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/account"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    app:tint="@color/yellow" />
+
+                <ImageView
+                    android:id="@+id/nav_4"
+                    android:layout_width="5dp"
+                    android:layout_height="5dp"
+                    android:src="@drawable/record"
+                    app:tint="@color/yellow" />
+
+
+            </LinearLayout>
+            
+            
+            
+
+
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+</RelativeLayout>
