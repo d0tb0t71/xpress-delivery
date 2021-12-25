@@ -10,6 +10,7 @@
     tools:context=".HomeScreen">
 
     <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/nav_bottom" />
@@ -25,7 +26,7 @@
         android:backgroundTint="@color/black"
         app:cardCornerRadius="20dp"
         android:padding="10dp"
-        android:layout_marginBottom="5dp"
+        android:layout_margin="5dp"
         >
 
         <LinearLayout
@@ -43,8 +44,10 @@
                 >
 
                 <ImageView
+                    android:id="@+id/home_nav_btn"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
+
                     android:src="@drawable/home"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
@@ -55,6 +58,7 @@
                     android:layout_width="5dp"
                     android:layout_height="5dp"
                     android:src="@drawable/record"
+                    android:visibility="gone"
                     app:tint="@color/yellow" />
 
                 
@@ -74,6 +78,7 @@
                 >
 
                 <ImageView
+                    android:id="@+id/track_nav_btn"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/delivery"
@@ -85,6 +90,7 @@
                     android:id="@+id/nav_2"
                     android:layout_width="5dp"
                     android:layout_height="5dp"
+                    android:visibility="gone"
                     android:src="@drawable/record"
                     app:tint="@color/yellow" />
 
@@ -104,6 +110,7 @@
                 >
 
                 <ImageView
+                    android:id="@+id/message_nav_btn"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/chat"
@@ -114,6 +121,7 @@
                 <ImageView
                     android:id="@+id/nav_3"
                     android:layout_width="5dp"
+                    android:visibility="gone"
                     android:layout_height="5dp"
                     android:src="@drawable/record"
                     app:tint="@color/yellow" />
@@ -135,6 +143,7 @@
                 >
 
                 <ImageView
+                    android:id="@+id/profile_nav_btn"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/account"
@@ -145,6 +154,7 @@
                 <ImageView
                     android:id="@+id/nav_4"
                     android:layout_width="5dp"
+                    android:visibility="gone"
                     android:layout_height="5dp"
                     android:src="@drawable/record"
                     app:tint="@color/yellow" />

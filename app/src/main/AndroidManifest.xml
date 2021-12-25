@@ -12,18 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.XpressDelivery">
         <activity
-            android:name=".ProfileFragment"
-            android:exported="false" />
-        <activity
-            android:name=".MessageFragment"
-            android:exported="false" />
-        <activity
-            android:name=".TrackWithIDFragment"
-            android:exported="false" />
-        <activity
-            android:name=".HomeFragment"
-            android:exported="false" />
-        <activity
             android:name=".VerifyEmailScreen"
             android:exported="false" />
         <activity
