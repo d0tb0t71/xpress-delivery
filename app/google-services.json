@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "875383027665",
+    "project_id": "xpress-delivery-35ae1",
+    "storage_bucket": "xpress-delivery-35ae1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:875383027665:android:2722ade69490faaf0ed2f0",
+        "android_client_info": {
+          "package_name": "com.example.xpressdelivery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "875383027665-ffpp1fuertmqrpv1vmhnn7fprmgpqqlh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAky7M53i633J-Xowovr4cQz8h-CW6IiNU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "875383027665-ffpp1fuertmqrpv1vmhnn7fprmgpqqlh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
