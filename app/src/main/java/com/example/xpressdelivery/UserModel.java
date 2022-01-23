@@ -3,16 +3,23 @@ package com.example.xpressdelivery;
 public class UserModel {
 
     String uid;
+    String imageUrl;
     String name;
     String email;
     String mobile;
+    String userStatus;
+    String isVerified;
 
-    public UserModel(String uid, String name, String email, String mobile) {
+    public UserModel(String uid, String imageUrl, String name, String email, String mobile, String userStatus, String isVerified) {
         this.uid = uid;
+        this.imageUrl = imageUrl;
         this.name = name;
         this.email = email;
         this.mobile = mobile;
+        this.userStatus = userStatus;
+        this.isVerified = isVerified;
     }
+
 
     public String getUid() {
         return uid;
@@ -20,6 +27,14 @@ public class UserModel {
 
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getName() {
@@ -44,5 +59,21 @@ public class UserModel {
 
     public void setMobile(String mobile) {
         this.mobile = mobile;
+    }
+
+    public String getUserStatus() {
+        return userStatus;
+    }
+
+    public void setUserStatus(String userStatus) {
+        this.userStatus = userStatus;
+    }
+
+    public String getIsVerified() {
+        return isVerified;
+    }
+
+    public void setIsVerified(String isVerified) {
+        this.isVerified = isVerified;
     }
 }

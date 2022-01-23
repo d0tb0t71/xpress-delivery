@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,6 +29,8 @@ public class RegisterScreen extends AppCompatActivity {
 
     FirebaseFirestore db;
 
+    RadioGroup radioGroup;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +42,9 @@ public class RegisterScreen extends AppCompatActivity {
         register_name = findViewById(R.id.register_name);
         register_c_pass = findViewById(R.id.register_c_pass);
         register_mobile = findViewById(R.id.register_mobile);
+        radioGroup = findViewById(R.id.radioGroup);
+
+
 
 
         register_now_btn = findViewById(R.id.register_now_btn);
@@ -54,6 +61,10 @@ public class RegisterScreen extends AppCompatActivity {
             String mobile = register_mobile.getText().toString();
 
 
+            int selecedRadio = radioGroup.getCheckedRadioButtonId();
+            RadioButton radioButton = (RadioButton) findViewById(selecedRadio);
+            String userStatus = radioButton.getText().toString();
+
             mAuth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
@@ -63,7 +74,7 @@ public class RegisterScreen extends AppCompatActivity {
 
                             FirebaseUser user = mAuth.getCurrentUser();
 
-                            UserModel userModel = new UserModel(user.getUid(),name,email,mobile);
+                            UserModel userModel = new UserModel(user.getUid(),"",name,email,mobile,userStatus,"false");
 
                             db = FirebaseFirestore.getInstance();
 

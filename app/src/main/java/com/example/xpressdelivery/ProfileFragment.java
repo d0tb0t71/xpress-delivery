@@ -1,5 +1,6 @@
 package com.example.xpressdelivery;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -8,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -31,8 +33,9 @@ public class ProfileFragment extends Fragment {
    FirebaseFirestore db;
    FirebaseAuth mAuth;
    FirebaseUser user;
+   Button logout_btn,edit_profile_btn;
 
-   TextView name;
+   TextView name,profile_address,profile_mobile,profile_email;
 
 
 
@@ -41,8 +44,18 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
 
 
+        view =  inflater.inflate(R.layout.fragment_profile, container, false);
+
+
 
         name = view.findViewById(R.id.profile_name);
+        profile_email = view.findViewById(R.id.profile_email);
+        profile_mobile = view.findViewById(R.id.profile_mobile);
+        profile_address = view.findViewById(R.id.profile_address);
+
+        logout_btn = view.findViewById(R.id.logout_btn);
+        edit_profile_btn = view.findViewById(R.id.edit_profile_btn);
+
 
 
         mAuth =FirebaseAuth.getInstance();
@@ -52,20 +65,31 @@ public class ProfileFragment extends Fragment {
 
 
 
-        /*DocumentReference documentReference = db.collection("users").document(uid);
-        documentReference.addSnapshotListener((Executor) this, new EventListener<DocumentSnapshot>() {
+        DocumentReference documentReference = db.collection("users").document(uid);
+        documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
 
                 name.setText(value.getString("name"));
+                profile_mobile.setText("Mobile : "+value.getString("mobile"));
+                profile_email.setText("Email: "+value.getString("email"));
+                profile_address.setText("Address : "+value.getString("address"));
 
 
             }
-        });*/
+        });
+
+
+        logout_btn.setOnClickListener(v->{
+
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(getContext(),LoginScreen.class));
+            getActivity().finish();
+
+        });
 
 
 
-        view =  inflater.inflate(R.layout.fragment_profile, container, false);
         return view;
 
 

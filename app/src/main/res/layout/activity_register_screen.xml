@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:text="Welcome to"
         android:textSize="20dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="5dp"
         />
 
     <TextView
@@ -25,7 +25,7 @@
         android:textSize="30dp"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="5dp"
         />
 
     <TextView
@@ -80,8 +80,31 @@
         android:hint="Mobile"
         android:background="@drawable/edittext_bg"
         android:padding="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="5dp"
         />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        >
+
+        <RadioButton
+            android:id="@+id/radioMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Customer"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/radioFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Admin" />
+
+    </RadioGroup>
 
 
 
@@ -91,7 +114,7 @@
         android:layout_height="wrap_content"
         android:text="REGISTER NOW"
         android:textColor="@color/yellow"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="20dp"
         />
 
     <androidx.cardview.widget.CardView
