@@ -9,8 +9,9 @@ public class UserModel {
     String mobile;
     String userStatus;
     String isVerified;
+    String address;
 
-    public UserModel(String uid, String imageUrl, String name, String email, String mobile, String userStatus, String isVerified) {
+    public UserModel(String uid, String imageUrl, String name, String email, String mobile, String userStatus, String isVerified, String address) {
         this.uid = uid;
         this.imageUrl = imageUrl;
         this.name = name;
@@ -18,8 +19,8 @@ public class UserModel {
         this.mobile = mobile;
         this.userStatus = userStatus;
         this.isVerified = isVerified;
+        this.address = address;
     }
-
 
     public String getUid() {
         return uid;
@@ -75,5 +76,13 @@ public class UserModel {
 
     public void setIsVerified(String isVerified) {
         this.isVerified = isVerified;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

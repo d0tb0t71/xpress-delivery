@@ -74,7 +74,7 @@ public class RegisterScreen extends AppCompatActivity {
 
                             FirebaseUser user = mAuth.getCurrentUser();
 
-                            UserModel userModel = new UserModel(user.getUid(),"",name,email,mobile,userStatus,"false");
+                            UserModel userModel = new UserModel(user.getUid(),"",name,email,mobile,userStatus,"false","Not Provided Yet");
 
                             db = FirebaseFirestore.getInstance();
 

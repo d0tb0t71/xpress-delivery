@@ -70,14 +70,15 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
 
-                name.setText(value.getString("name"));
+                name.setText(""+value.getString("name"));
                 profile_mobile.setText("Mobile : "+value.getString("mobile"));
                 profile_email.setText("Email: "+value.getString("email"));
                 profile_address.setText("Address : "+value.getString("address"));
 
 
             }
-        });
+        })
+        ;
 
 
         logout_btn.setOnClickListener(v->{

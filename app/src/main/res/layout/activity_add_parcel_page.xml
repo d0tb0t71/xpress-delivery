@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/yellow"
+
+    tools:context=".AddParcelPage">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:background="@color/white"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Parcel"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:gravity="center"
+        >
+
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Receiver Name"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:padding="10dp"
+
+        />
+
+        <EditText
+            android:id="@+id/rName_ET"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Enter receiver name"
+            android:background="@drawable/edittext_bg"
+            android:padding="10dp"
+            />
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Receiver Email"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:padding="10dp"
+
+            />
+
+        <EditText
+            android:id="@+id/rEmail_ET"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Enter receiver email"
+            android:background="@drawable/edittext_bg"
+            android:padding="10dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Receiver Mobile"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:padding="10dp"
+
+            />
+
+        <EditText
+            android:id="@+id/rMobile_ET"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Enter receiver mobile"
+            android:background="@drawable/edittext_bg"
+            android:padding="10dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Receiver Address"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:padding="10dp"
+
+            />
+
+        <EditText
+            android:id="@+id/rAdd_ET"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Enter receiver address..."
+            android:background="@drawable/edittext_bg"
+            android:padding="10dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sender Name"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:padding="10dp"
+
+            />
+
+        <EditText
+            android:id="@+id/sName_ET"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Enter sender name"
+            android:background="@drawable/edittext_bg"
+            android:padding="10dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Parcel Type"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:padding="10dp"
+
+            />
+
+        <EditText
+            android:id="@+id/pT_ET"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Parcel type..."
+            android:background="@drawable/edittext_bg"
+            android:padding="10dp"
+            />
+
+        <Button
+            android:id="@+id/add_parcel_now_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Now"
+            android:textAlignment="center"
+            />
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
