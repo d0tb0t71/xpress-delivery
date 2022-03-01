@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="@color/yellow"
+    tools:context=".ParcelDetails"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Parcel Details"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        />
+
+    <TextView
+        android:id="@+id/parcelID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Parcel ID - \n XXXXXXXXXXX"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:background="@color/cardview_light_background"
+        />
+    <TextView
+        android:id="@+id/product_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Product Type : "
+        android:textSize="18dp"
+        android:textAlignment="center"
+        />
+    <TextView
+        android:id="@+id/issued_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Issue Date : "
+        android:textSize="18dp"
+        android:textAlignment="center"
+        android:layout_marginBottom="20dp"
+        />
+
+
+    <TextView
+        android:id="@+id/receiver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Receiver : "
+        android:textSize="17dp"
+        />
+    <TextView
+        android:id="@+id/r_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Receiver Email : "
+        android:textSize="17dp"
+        />
+    <TextView
+        android:id="@+id/r_mobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Receiver Mobile : "
+        android:textSize="17dp"
+        />
+    <TextView
+        android:id="@+id/r_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Receiver Address : "
+        android:textSize="17dp"
+        android:layout_marginBottom="15dp"
+        />
+    <TextView
+        android:id="@+id/sender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sender : "
+        android:textSize="17dp"
+        />
+
+
+
+
+
+</LinearLayout>

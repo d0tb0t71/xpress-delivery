@@ -1,6 +1,7 @@
 package com.example.xpressdelivery;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +41,17 @@ public class ParcelAdapter extends RecyclerView.Adapter<ParcelAdapter.MyViewHold
         holder.issue_date_tv.setText("Issue Date : "+parcelModel.getIssueDate());
         holder.product_type_tv.setText("Product Type : "+parcelModel.getpType());
 
+
+        holder.show_details_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(context,ParcelDetails.class);
+                intent.putExtra("pID", parcelModel.getpID());
+                context.startActivity(intent);
+
+            }
+        });
 
     }
 
