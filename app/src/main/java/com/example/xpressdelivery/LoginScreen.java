@@ -77,17 +77,6 @@ public class LoginScreen extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
         login_to_register.setOnClickListener(v->{
 
             startActivity(new Intent(getApplicationContext(),RegisterScreen.class));

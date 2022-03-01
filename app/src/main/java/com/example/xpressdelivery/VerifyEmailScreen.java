@@ -27,6 +27,7 @@ public class VerifyEmailScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verify_email_screen);
 
+
         verified_btn = findViewById(R.id.verified_btn);
         verify_email_tv = findViewById(R.id.verify_email_tv);
 

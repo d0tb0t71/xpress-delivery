@@ -16,6 +16,8 @@ public class ParcelModel {
     String wayToR;
     String delivered;
 
+    public ParcelModel() {
+    }
 
     public ParcelModel(String pID, String rName, String rEmail, String rMobile, String rAdd, String sName, String pType, String issueDate, String issued, String wayToWH, String inWH, String wayToR, String delivered) {
         this.pID = pID;

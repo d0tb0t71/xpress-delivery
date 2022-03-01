@@ -77,8 +77,7 @@ public class ProfileFragment extends Fragment {
 
 
             }
-        })
-        ;
+        });
 
 
         logout_btn.setOnClickListener(v->{

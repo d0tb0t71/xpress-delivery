@@ -60,8 +60,6 @@ public class AddParcelPage extends AppCompatActivity {
                         ParcelModel parcel = new ParcelModel(pID,rName,rEmail,rMobile,rAdd,sName,pType,issueDate,"true","false","false","false","false");
 
                 db.collection("parcel")
-                        .document(rEmail)
-                        .collection(pID)
                         .document(pID)
                         .set(parcel);
 

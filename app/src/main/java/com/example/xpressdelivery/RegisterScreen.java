@@ -52,7 +52,6 @@ public class RegisterScreen extends AppCompatActivity {
 
         register_now_btn.setOnClickListener(v->{
 
-            //sdipon.sutradhar@gmail.com
 
             String email = register_email.getText().toString();
             String pass = register_pass.getText().toString();
