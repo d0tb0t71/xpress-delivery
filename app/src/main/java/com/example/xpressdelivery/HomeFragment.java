@@ -43,6 +43,8 @@ public class HomeFragment extends Fragment {
     ArrayList<ParcelModel> list;
     FirebaseFirestore db;
 
+    String userStatus="",myEmail = "";
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -88,7 +90,8 @@ public class HomeFragment extends Fragment {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
 
-                String userStatus = ""+value.getString("userStatus");
+                userStatus = ""+value.getString("userStatus");
+                myEmail = ""+value.getString("email");
 
                 if(userStatus.equals("admin")){
                     card_add.setVisibility(View.VISIBLE);
@@ -113,7 +116,18 @@ public class HomeFragment extends Fragment {
                         for(DocumentChange dc : value.getDocumentChanges()){
 
                             if(dc.getType() == DocumentChange.Type.ADDED){
-                                list.add(dc.getDocument().toObject(ParcelModel.class));
+
+                                if(userStatus.equals("admin")){
+                                    list.add(dc.getDocument().toObject(ParcelModel.class));
+                                }
+                                else{
+                                    ParcelModel parcelModel = dc.getDocument().toObject(ParcelModel.class);
+
+                                    if(parcelModel.getrEmail().equals(myEmail)){
+                                        list.add(dc.getDocument().toObject(ParcelModel.class));
+                                    }
+                                }
+
                             }
 
                             parcelAdapter.notifyDataSetChanged();
