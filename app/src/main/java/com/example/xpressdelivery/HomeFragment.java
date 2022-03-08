@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,6 +19,8 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
@@ -32,6 +35,7 @@ public class HomeFragment extends Fragment {
 
     TextView add_parcel_btn;
     LinearLayout add_parcel_view;
+    CardView card_add;
 
     RecyclerView recyclerViewParcel;
 
@@ -49,6 +53,7 @@ public class HomeFragment extends Fragment {
         add_parcel_btn = view.findViewById(R.id.add_parcel_btn);
         add_parcel_view = view.findViewById(R.id.add_parcel_view);
         recyclerViewParcel = view.findViewById(R.id.recyclerViewParcel);
+        card_add = view.findViewById(R.id.card_add);
 
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
@@ -75,6 +80,21 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getContext(),AddParcelPage.class));
+            }
+        });
+
+        DocumentReference documentReference1 = db.collection("users").document(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        documentReference1.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+
+                String userStatus = ""+value.getString("userStatus");
+
+                if(userStatus.equals("admin")){
+                    card_add.setVisibility(View.VISIBLE);
+                }
+
+
             }
         });
 

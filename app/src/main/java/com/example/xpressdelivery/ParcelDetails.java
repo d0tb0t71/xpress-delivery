@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -28,6 +29,7 @@ public class ParcelDetails extends AppCompatActivity {
     String selected = "1. Issued";
     LinearLayout l1, l2, l3, l4, l5;
     Button update_status_btn;
+    LinearLayout linear1;
 
 
     @Override
@@ -48,6 +50,8 @@ public class ParcelDetails extends AppCompatActivity {
         sender = findViewById(R.id.sender);
         r_email = findViewById(R.id.r_email);
 
+        linear1 = findViewById(R.id.linear1);
+
         update_status_btn = findViewById(R.id.update_status_btn);
 
 
@@ -59,6 +63,23 @@ public class ParcelDetails extends AppCompatActivity {
 
 
         db = FirebaseFirestore.getInstance();
+
+
+        DocumentReference documentReference1 = db.collection("users").document(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        documentReference1.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+
+                String userStatus = ""+value.getString("userStatus");
+
+                if(userStatus.equals("admin")){
+
+                    linear1.setVisibility(View.VISIBLE);
+                }
+
+
+            }
+        });
 
 
         Spinner dropdown = findViewById(R.id.spinner1);

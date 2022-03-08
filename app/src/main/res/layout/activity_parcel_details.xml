@@ -236,26 +236,35 @@
 
 
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/linear1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Update Status (Admin) : "
-        android:layout_marginTop="10dp"
-        android:textSize="15dp"
-        />
-    <Spinner
-        android:id="@+id/spinner1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"/>
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update Status (Admin) : "
+            android:layout_marginTop="10dp"
+            android:textSize="15dp"
+            />
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"/>
 
-    <Button
-        android:id="@+id/update_status_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Update Status"
-        />
+        <Button
+            android:id="@+id/update_status_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update Status"
+            />
+
+    </LinearLayout>
 
 
 
