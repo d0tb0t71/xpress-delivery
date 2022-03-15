@@ -64,36 +64,44 @@ public class RegisterScreen extends AppCompatActivity {
             RadioButton radioButton = (RadioButton) findViewById(selecedRadio);
             String userStatus = radioButton.getText().toString();
 
-            mAuth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
+           if(email.length()>5 && pass.length()>5 && name.length() > 3 && pass.equals(c_pass) && mobile.length() > 10){
 
-                        if(task.isSuccessful()){
-                            startActivity(new Intent(getApplicationContext(),VerifyEmailScreen.class));
+               mAuth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                   @Override
+                   public void onComplete(@NonNull Task<AuthResult> task) {
 
-                            FirebaseUser user = mAuth.getCurrentUser();
+                       if(task.isSuccessful()){
+                           startActivity(new Intent(getApplicationContext(),VerifyEmailScreen.class));
 
-                            UserModel userModel = new UserModel(user.getUid(),"",name,email,mobile,userStatus,"false","Not Provided Yet");
+                           FirebaseUser user = mAuth.getCurrentUser();
 
-                            db = FirebaseFirestore.getInstance();
+                           UserModel userModel = new UserModel(user.getUid(),"",name,email,mobile,userStatus,"false","Not Provided Yet");
+
+                           db = FirebaseFirestore.getInstance();
 
 
-                            db.collection("users")
-                                    .document(user.getUid())
-                                    .set(userModel);
+                           db.collection("users")
+                                   .document(user.getUid())
+                                   .set(userModel);
 
-                        }
-                        else{
-                            Toast.makeText(getApplicationContext(), "Registration Failed\n"+task.getException().getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                        }
+                       }
+                       else{
+                           Toast.makeText(getApplicationContext(), "Registration Failed\n"+task.getException().getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                       }
 
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(getApplicationContext(), "Registration Failed !\n"+e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                }
-            });
+                   }
+               }).addOnFailureListener(new OnFailureListener() {
+                   @Override
+                   public void onFailure(@NonNull Exception e) {
+                       Toast.makeText(getApplicationContext(), "Registration Failed !\n"+e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                   }
+               });
+
+           }
+           else{
+               Toast.makeText(getApplicationContext(), "Please Enter Correct Information", Toast.LENGTH_SHORT).show();
+
+           }
 
 
         });

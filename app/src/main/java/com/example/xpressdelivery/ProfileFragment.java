@@ -88,6 +88,13 @@ public class ProfileFragment extends Fragment {
 
         });
 
+        edit_profile_btn.setOnClickListener(v->{
+
+            startActivity(new Intent(getContext(),EditProfile.class));
+            getActivity().finish();
+
+        });
+
 
 
         return view;

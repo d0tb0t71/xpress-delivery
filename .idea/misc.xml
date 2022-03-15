@@ -4,19 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/edittext_bg.xml" value="0.3697916666666667" />
-        <entry key="app/src/main/res/layout/activity_add_parcel_page.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_add_parcel_page.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_edit_profile.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_home_fragment.xml" value="0.3536458333333333" />
         <entry key="app/src/main/res/layout/activity_home_screen.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_message_fragment.xml" value="0.3536458333333333" />
-        <entry key="app/src/main/res/layout/activity_parcel_details.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_parcel_details.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_profile_fragment.xml" value="0.3536458333333333" />
         <entry key="app/src/main/res/layout/activity_profile_screen.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_register_screen.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_track_with_idfragment.xml" value="0.3385416666666667" />
         <entry key="app/src/main/res/layout/activity_verify_email_screen.xml" value="0.3536458333333333" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_message.xml" value="0.3536458333333333" />
+        <entry key="app/src/main/res/layout/fragment_message.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_track_with_i_d.xml" value="0.25" />
         <entry key="app/src/main/res/layout/parcel_view.xml" value="0.3059490084985836" />

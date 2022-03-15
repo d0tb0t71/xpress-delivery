@@ -15,11 +15,12 @@ public class ParcelModel {
     String inWH ;
     String wayToR;
     String delivered;
+    String weight;
 
     public ParcelModel() {
     }
 
-    public ParcelModel(String pID, String rName, String rEmail, String rMobile, String rAdd, String sName, String pType, String issueDate, String issued, String wayToWH, String inWH, String wayToR, String delivered) {
+    public ParcelModel(String pID, String rName, String rEmail, String rMobile, String rAdd, String sName, String pType, String issueDate, String issued, String wayToWH, String inWH, String wayToR, String delivered, String weight) {
         this.pID = pID;
         this.rName = rName;
         this.rEmail = rEmail;
@@ -33,6 +34,7 @@ public class ParcelModel {
         this.inWH = inWH;
         this.wayToR = wayToR;
         this.delivered = delivered;
+        this.weight = weight;
     }
 
     public String getpID() {
@@ -137,5 +139,13 @@ public class ParcelModel {
 
     public void setDelivered(String delivered) {
         this.delivered = delivered;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
     }
 }

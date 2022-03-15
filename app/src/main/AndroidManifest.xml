@@ -3,6 +3,7 @@
     package="com.example.xpressdelivery">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
 
     <application
         android:allowBackup="true"
@@ -11,6 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.XpressDelivery">
+        <activity
+            android:name=".EditProfile"
+            android:exported="false" />
+        <activity
+            android:name=".ForgotPass"
+            android:exported="false" />
         <activity
             android:name=".ParcelDetails"
             android:exported="false" />

@@ -15,7 +15,7 @@ import java.sql.Timestamp;
 
 public class AddParcelPage extends AppCompatActivity {
 
-    EditText rName_ET,rEmail_ET,rMobile_ET,rAdd_ET,sName_ET,pT_ET;
+    EditText rName_ET, rEmail_ET, rMobile_ET, rAdd_ET, sName_ET, pT_ET, pW_ET;
     Button add_parcel_now_btn;
     FirebaseFirestore db;
     FirebaseAuth mAuth;
@@ -36,6 +36,7 @@ public class AddParcelPage extends AppCompatActivity {
         rAdd_ET = findViewById(R.id.rAdd_ET);
         sName_ET = findViewById(R.id.sName_ET);
         pT_ET = findViewById(R.id.pT_ET);
+        pW_ET = findViewById(R.id.pW_ET);
 
         add_parcel_now_btn = findViewById(R.id.add_parcel_now_btn);
 
@@ -44,12 +45,13 @@ public class AddParcelPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String rName = ""+ rName_ET.getText().toString();
-                String rEmail = "" + rEmail_ET.getText().toString();
+                String rName = "" + rName_ET.getText().toString();
+                String rEmail = "" + rEmail_ET.getText().toString().trim();
                 String rMobile = "" + rMobile_ET.getText().toString();
                 String rAdd = "" + rAdd_ET.getText().toString();
                 String sName = "" + sName_ET.getText().toString();
                 String pType = "" + pT_ET.getText().toString();
+                String pWeight = "" + pW_ET.getText().toString();
 
                 Timestamp timestamp = new Timestamp(System.currentTimeMillis());
                 long time = timestamp.getTime();
@@ -57,20 +59,18 @@ public class AddParcelPage extends AppCompatActivity {
 
                 String issueDate = timestamp.toString();
 
-                        ParcelModel parcel = new ParcelModel(pID,rName,rEmail,rMobile,rAdd,sName,pType,issueDate,"true","false","false","false","false");
+                ParcelModel parcel = new ParcelModel(pID, rName, rEmail, rMobile, rAdd, sName, pType, issueDate, "true", "false", "false", "false", "false",pWeight);
 
                 db.collection("parcel")
                         .document(pID)
                         .set(parcel);
 
-                startActivity(new Intent(getApplicationContext(),HomeScreen.class));
+                startActivity(new Intent(getApplicationContext(), HomeScreen.class));
                 finish();
 
 
             }
         });
-
-
 
 
     }

@@ -93,7 +93,7 @@ public class HomeFragment extends Fragment {
                 userStatus = ""+value.getString("userStatus");
                 myEmail = ""+value.getString("email");
 
-                if(userStatus.equals("admin")){
+                if(userStatus.equals("Admin")){
                     card_add.setVisibility(View.VISIBLE);
                 }
 
@@ -117,7 +117,7 @@ public class HomeFragment extends Fragment {
 
                             if(dc.getType() == DocumentChange.Type.ADDED){
 
-                                if(userStatus.equals("admin")){
+                                if(userStatus.equals("Admin")){
                                     list.add(dc.getDocument().toObject(ParcelModel.class));
                                 }
                                 else{

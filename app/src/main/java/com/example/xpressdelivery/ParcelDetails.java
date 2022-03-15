@@ -24,7 +24,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 public class ParcelDetails extends AppCompatActivity {
 
 
-    TextView parcelID, product_type, issued_date, receiver, r_mobile, r_address, sender, r_email;
+    TextView parcelID, product_type, issued_date, receiver, r_mobile, r_address, sender, r_email,amount;
     FirebaseFirestore db;
     String selected = "1. Issued";
     LinearLayout l1, l2, l3, l4, l5;
@@ -49,6 +49,7 @@ public class ParcelDetails extends AppCompatActivity {
         r_address = findViewById(R.id.r_address);
         sender = findViewById(R.id.sender);
         r_email = findViewById(R.id.r_email);
+        amount = findViewById(R.id.amount);
 
         linear1 = findViewById(R.id.linear1);
 
@@ -72,7 +73,7 @@ public class ParcelDetails extends AppCompatActivity {
 
                 String userStatus = ""+value.getString("userStatus");
 
-                if(userStatus.equals("admin")){
+                if(userStatus.equals("Admin")){
 
                     linear1.setVisibility(View.VISIBLE);
                 }
@@ -121,7 +122,13 @@ public class ParcelDetails extends AppCompatActivity {
                 r_mobile.setText("Receiver Mobile : " + value.getString("rMobile"));
                 r_address.setText("Receiver Address : " + value.getString("rAdd"));
                 sender.setText("Sender : " + value.getString("sName") + "  *");
+                sender.setText("Sender : " + value.getString("sName") + "  *");
 
+                String amo = value.getString("weight");
+                int am = Integer.parseInt(amo);
+                am = (am * 10) ;
+
+                amount.setText("Payment amount : " + (am + 100) + "৳");
 
                 String issued = value.getString("issued");
                 String wayToWH = value.getString("wayToWH");
@@ -130,7 +137,7 @@ public class ParcelDetails extends AppCompatActivity {
                 String delivered = value.getString("delivered");
 
 
-                if (wayToR.equals("true")) {
+                if (delivered.equals("true")) {
                     int spinnerPosition = adapter.getPosition("5. Delivered");
                     dropdown.setSelection(spinnerPosition);
                     l5.setVisibility(View.VISIBLE);

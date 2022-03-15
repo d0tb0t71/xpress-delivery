@@ -145,6 +145,26 @@
             android:background="@drawable/edittext_bg"
             android:padding="10dp"
             />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Parcel Weight (in KG)"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:padding="10dp"
+
+            />
+        <EditText
+
+            android:id="@+id/pW_ET"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Parcel weight..."
+        android:inputType="number"
+            android:background="@drawable/edittext_bg"
+            android:padding="10dp"
+            />
+
 
         <Button
             android:id="@+id/add_parcel_now_btn"
