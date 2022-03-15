@@ -24,7 +24,6 @@ public class LoginScreen extends AppCompatActivity {
     FirebaseUser user;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,29 +45,36 @@ public class LoginScreen extends AppCompatActivity {
             String pass = login_pass.getText().toString();
 
 
-            mAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
 
-                    user = mAuth.getCurrentUser();
-                    if(task.isSuccessful() ){
-                        if(user.isEmailVerified()){
-                            startActivity(new Intent(getApplicationContext(),HomeScreen.class));
-                        }
-                        else
-                        {
-                            startActivity(new Intent(getApplicationContext(),VerifyEmailScreen.class));
+            if(email.length()>5 && pass.length()>5){
+                mAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+
+                        user = mAuth.getCurrentUser();
+
+                        if(task.isSuccessful() ){
+                            if(user.isEmailVerified()){
+                                startActivity(new Intent(getApplicationContext(),HomeScreen.class));
+                            }
+                            else
+                            {
+                                startActivity(new Intent(getApplicationContext(),VerifyEmailScreen.class));
+                            }
+
                         }
 
                     }
-
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(getApplicationContext(), "Login Failed \n"+e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                }
-            });
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getApplicationContext(), "Login Failed \n"+e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+            else{
+                Toast.makeText(getApplicationContext(), "Enter Valid Information", Toast.LENGTH_SHORT).show();
+            }
 
 
 

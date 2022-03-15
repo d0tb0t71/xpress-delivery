@@ -5,6 +5,7 @@ import static com.google.android.gms.common.util.CollectionUtils.mapOf;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -24,11 +25,11 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 public class ParcelDetails extends AppCompatActivity {
 
 
-    TextView parcelID, product_type, issued_date, receiver, r_mobile, r_address, sender, r_email,amount;
+    TextView parcelID, product_type, issued_date, receiver, r_mobile, r_address, sender, r_email,amount,weight;
     FirebaseFirestore db;
     String selected = "1. Issued";
     LinearLayout l1, l2, l3, l4, l5;
-    Button update_status_btn;
+    Button update_status_btn,delete_btn;
     LinearLayout linear1;
 
 
@@ -50,6 +51,8 @@ public class ParcelDetails extends AppCompatActivity {
         sender = findViewById(R.id.sender);
         r_email = findViewById(R.id.r_email);
         amount = findViewById(R.id.amount);
+        weight = findViewById(R.id.weight);
+        delete_btn = findViewById(R.id.delete_btn);
 
         linear1 = findViewById(R.id.linear1);
 
@@ -123,6 +126,7 @@ public class ParcelDetails extends AppCompatActivity {
                 r_address.setText("Receiver Address : " + value.getString("rAdd"));
                 sender.setText("Sender : " + value.getString("sName") + "  *");
                 sender.setText("Sender : " + value.getString("sName") + "  *");
+                weight.setText("Parcel Weight : " + value.getString("weight" + "KG"));
 
                 String amo = value.getString("weight");
                 int am = Integer.parseInt(amo);
@@ -255,6 +259,18 @@ public class ParcelDetails extends AppCompatActivity {
 
                 recreate();
             }
+        });
+
+
+        delete_btn.setOnClickListener(v->{
+
+            db.collection("parcel")
+                    .document(pID)
+                    .delete();
+
+            startActivity(new Intent(getApplicationContext(),HomeScreen.class));
+            finish();
+
         });
 
 

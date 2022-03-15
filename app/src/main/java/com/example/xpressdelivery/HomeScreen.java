@@ -5,14 +5,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
-
-import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeScreen extends AppCompatActivity {
 
@@ -54,7 +49,7 @@ public class HomeScreen extends AppCompatActivity {
         });
         message_nav_btn.setOnClickListener(v->{
 
-            replaceFragment(new MessageFragment());
+            replaceFragment(new ContactUsFragment());
 
         });
         profile_nav_btn.setOnClickListener(v->{
@@ -88,7 +83,7 @@ public class HomeScreen extends AppCompatActivity {
             nav_3.setVisibility(View.GONE);
             nav_4.setVisibility(View.GONE);
 
-        }else if(frag.contains("MessageFragment")){
+        }else if(frag.contains("ContactUsFragment")){
             nav_1.setVisibility(View.GONE);
             nav_2.setVisibility(View.GONE);
             nav_3.setVisibility(View.VISIBLE);

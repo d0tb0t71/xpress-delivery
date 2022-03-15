@@ -20,6 +20,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firestore.v1.WriteResult;
 
+import java.net.IDN;
+
 public class RegisterScreen extends AppCompatActivity {
 
     EditText register_email,register_pass,register_name,register_c_pass,register_mobile;
@@ -46,7 +48,6 @@ public class RegisterScreen extends AppCompatActivity {
 
 
 
-
         register_now_btn = findViewById(R.id.register_now_btn);
         mAuth = FirebaseAuth.getInstance();
 
@@ -62,6 +63,7 @@ public class RegisterScreen extends AppCompatActivity {
 
             int selecedRadio = radioGroup.getCheckedRadioButtonId();
             RadioButton radioButton = (RadioButton) findViewById(selecedRadio);
+
             String userStatus = radioButton.getText().toString();
 
            if(email.length()>5 && pass.length()>5 && name.length() > 3 && pass.equals(c_pass) && mobile.length() > 10){
@@ -73,12 +75,13 @@ public class RegisterScreen extends AppCompatActivity {
                        if(task.isSuccessful()){
                            startActivity(new Intent(getApplicationContext(),VerifyEmailScreen.class));
 
+
+
                            FirebaseUser user = mAuth.getCurrentUser();
 
                            UserModel userModel = new UserModel(user.getUid(),"",name,email,mobile,userStatus,"false","Not Provided Yet");
 
                            db = FirebaseFirestore.getInstance();
-
 
                            db.collection("users")
                                    .document(user.getUid())
